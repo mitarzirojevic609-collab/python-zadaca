@@ -2,7 +2,7 @@
 import math
 
 from domaci import iteam
-from tipovi_elemenata_zadaca import lista_recenica
+from zadaca_TE import lista_recenica
 
 mix_tipe = ["test", 29,20,5, 3,4,5.3,"milan"]
 int_count = 0
