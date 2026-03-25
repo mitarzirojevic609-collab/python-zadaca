@@ -5,6 +5,7 @@ connection = pymysql.connect(
     user="root",
     passwd="12061998",
     database="libary",
+    cursorclass=pymysql.cursors.DictCursor
 )
 if connection.open:
     print("Connected")
