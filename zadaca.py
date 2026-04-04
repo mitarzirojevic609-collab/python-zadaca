@@ -1,6 +1,6 @@
 from itertools import chain
 
-from main import name
+from Zadaca_predavanje13 import name
 #zadatak 1
 name = ("Mitar")
 lastname =("Zirojevic")
