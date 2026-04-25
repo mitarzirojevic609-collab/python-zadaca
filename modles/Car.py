@@ -1,28 +1,23 @@
 class Car:
-
     VALID_CARS = {
         "Audi": [
-            {"model": "A4", "production_year": 2018},
-            {"model": "A6", "production_year": 2020}
+            {"model": "A4", "production_year": 2018, "rented": True, "rented until": None},
+            {"model": "A6", "production_year": 2020, "rented": False, "rented until": None}
         ],
         "BMW": [
-            {"model": "X5", "production_year": 2019},
-            {"model": "320d", "production_year": 2017}
+            {"model": "X5", "production_year": 2019, "rented": False, "rented until": None},
+            {"model": "320d", "production_year": 2017, "rented": False, "rented until": None}
         ],
         "Mercedes": [
-            {"model": "C200", "production_year": 2018},
-            {"model": "E300", "production_year": 2021}
+            {"model": "C200", "production_year": 2018, "rented": False, "rented until": None},
+            {"model": "E300", "production_year": 2021, "rented": False, "rented until": None}
         ]
     }
-
-
 
     def __init__(self):
         self.__brand = None
         self.__model = None
         self.__production_year = None
-
-
 
     @property
     def model(self):
@@ -40,7 +35,6 @@ class Car:
         if model not in valid_models:
             raise ValueError("Model is not valid")
 
-
         self.__model = model
 
         for car_model in Car.VALID_CARS[self.__brand]:
@@ -48,8 +42,8 @@ class Car:
                 self.__production_year = car_model['production_year']
 
     @property
-    def brand (self):
-       return self.__brand
+    def brand(self):
+        return self.__brand
 
     @brand.setter
     def brand(self, brand):
@@ -57,6 +51,7 @@ class Car:
             raise ValueError("Invalid car")
 
         self.__brand = brand
+
     @property
     def production_year(self):
         return self.__production_year
@@ -66,12 +61,10 @@ class Car:
         if self.__model is None:
             raise ValueError("Production year can not be set")
 
-        if self.__model is not  None and self.production_year is not None:
+        if self.__model is not None and self.production_year is not None:
             raise ValueError("Production year can not be set")
 
         self.__production_year = year
-
-
 
 
 audi = Car()
